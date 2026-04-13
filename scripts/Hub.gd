@@ -35,10 +35,12 @@ func _clamp_bg():
 	bg.position = _bg_pos
 	bg.scale    = Vector2(_bg_scale, _bg_scale)
 	# Sync all world nodes with background transform
+	# BG is Sprite2D (origin = center), world nodes use top-left origin
+	var world_origin = _bg_pos - BG_IMG_SIZE * _bg_scale * 0.5
 	for node_name in ["Trees", "House", "Fence", "Road", "Garden", "Barn", "Decorations"]:
 		var node = get_node_or_null(node_name)
 		if node:
-			node.position = _bg_pos
+			node.position = world_origin
 			node.scale    = Vector2(_bg_scale, _bg_scale)
 
 func _unhandled_input(event):
