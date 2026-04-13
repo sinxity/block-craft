@@ -23,6 +23,13 @@ var _touches       : Dictionary = {}  # finger_id -> screen position
 var _pinch_last_dist   : float = 0.0
 var _pinch_last_center : Vector2
 
+# Prop nodes (House, Barn, etc.) have fixed positions in BG image space.
+# We store their offset (in BG pixels) and base scale (at bg_scale=1.0)
+# so _clamp_bg() can correctly reposition them when panning/zooming.
+const PROP_NODE_NAMES = ["House", "Fence", "Road", "Garden", "Barn", "Path", "Well", "Decorations"]
+var _prop_bg_offsets : Dictionary = {}   # node_name -> Vector2 (BG image pixels)
+var _prop_base_scales : Dictionary = {}  # node_name -> Vector2 (scale at bg_scale 1.0)
+
 func _clamp_bg():
 	var bg = get_node_or_null("BG")
 	if not bg: return
@@ -37,11 +44,17 @@ func _clamp_bg():
 	# Sync all world nodes with background transform
 	# BG is Sprite2D (origin = center), world nodes use top-left origin
 	var world_origin = _bg_pos - BG_IMG_SIZE * _bg_scale * 0.5
-	for node_name in ["Trees", "House", "Fence", "Road", "Garden", "Barn", "Decorations"]:
-		var node = get_node_or_null(node_name)
-		if node:
-			node.position = world_origin
-			node.scale    = Vector2(_bg_scale, _bg_scale)
+	# Trees is a container Node2D at (0,0): children hold their own BG-pixel offsets.
+	var trees = get_node_or_null("Trees")
+	if trees:
+		trees.position = world_origin
+		trees.scale    = Vector2(_bg_scale, _bg_scale)
+	# Prop/building nodes are Sprite2D with designed positions — recompute from stored offsets.
+	for n in PROP_NODE_NAMES:
+		var node = get_node_or_null(n)
+		if node and _prop_bg_offsets.has(n):
+			node.position = world_origin + _prop_bg_offsets[n] * _bg_scale
+			node.scale    = _prop_base_scales[n] * _bg_scale
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
@@ -91,6 +104,14 @@ func _ready():
 	_bg_scale_min = max(vp.x / BG_IMG_SIZE.x, vp.y / BG_IMG_SIZE.y) * 1.02
 	_bg_scale     = _bg_scale_min
 	_bg_pos       = vp / 2.0
+	# Capture each prop's position in BG image space before first _clamp_bg() call.
+	# node.position is in screen coords at this point; world_origin is BG's top-left corner.
+	var init_world_origin = _bg_pos - BG_IMG_SIZE * _bg_scale * 0.5
+	for n in PROP_NODE_NAMES:
+		var node = get_node_or_null(n)
+		if node:
+			_prop_bg_offsets[n]  = (node.position - init_world_origin) / _bg_scale
+			_prop_base_scales[n] = node.scale / _bg_scale
 	_clamp_bg()
 
 	GameState.update_streak()
