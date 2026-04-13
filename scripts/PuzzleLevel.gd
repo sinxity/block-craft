@@ -1,6 +1,6 @@
 extends Node2D
 
-# ⚠️ DEV ONLY — установи false перед релизом
+#  DEV ONLY — установи false перед релизом
 const DEV_MODE = true
 
 @onready var grid_board = $GridBoard
@@ -51,7 +51,7 @@ var _park_rect: Rect2 = Rect2(270, 1006, 180, 72)
 # ── УРОВНИ ──────────────────────────────────────────────────────
 const LEVEL_SHAPES = {
 	1: {
-		"name": "Топор", "reward": "axe", "reward_name": "🪓 Топор",
+		"name": "Топор", "reward": "axe", "reward_name": " Топор",
 		"cells": [
 			Vector2i(4,1),Vector2i(5,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -64,7 +64,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	2: {
-		"name": "Молоток", "reward": "hammer", "reward_name": "🔨 Молоток",
+		"name": "Молоток", "reward": "hammer", "reward_name": " Молоток",
 		"cells": [
 			Vector2i(0,2),Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),Vector2i(9,2),
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
@@ -76,7 +76,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	3: {
-		"name": "Верёвка", "reward": "rope", "reward_name": "🪢 Верёвка",
+		"name": "Верёвка", "reward": "rope", "reward_name": " Верёвка",
 		"cells": [
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),
 			Vector2i(4,2),
@@ -90,7 +90,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	4: {
-		"name": "Лопата", "reward": "shovel", "reward_name": "🪚 Лопата",
+		"name": "Лопата", "reward": "shovel", "reward_name": " Лопата",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -103,7 +103,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	5: {
-		"name": "Фундамент", "reward": "foundation", "reward_name": "🧱 Фундамент",
+		"name": "Фундамент", "reward": "foundation", "reward_name": " Фундамент",
 		"raccoon_before": "tools_ready",
 		"cells": [
 			Vector2i(0,7),Vector2i(1,7),Vector2i(2,7),Vector2i(3,7),
@@ -113,7 +113,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	6: {
-		"name": "Каркас дома", "reward": "beam", "reward_name": "🪵 Балки",
+		"name": "Каркас дома", "reward": "beam", "reward_name": " Балки",
 		"cells": [
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
 			Vector2i(2,4),Vector2i(7,4),
@@ -124,7 +124,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	7: {
-		"name": "Крыша", "reward": "roof", "reward_name": "🏠 Крыша",
+		"name": "Крыша", "reward": "roof", "reward_name": " Крыша",
 		"cells": [
 			Vector2i(4,2),Vector2i(5,2),
 			Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
@@ -135,7 +135,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	8: {
-		"name": "Стены", "reward": "wall", "reward_name": "🏗️ Стены",
+		"name": "Стены", "reward": "wall", "reward_name": " Стены",
 		"cells": [
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
 			Vector2i(1,4),Vector2i(8,4),
@@ -146,7 +146,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	9: {
-		"name": "Окно", "reward": "window", "reward_name": "🪟 Окно",
+		"name": "Окно", "reward": "window", "reward_name": " Окно",
 		"cells": [
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
 			Vector2i(2,4),Vector2i(4,4),Vector2i(5,4),Vector2i(7,4),
@@ -156,7 +156,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	10: {
-		"name": "Дверь", "reward": "door", "reward_name": "🚪 Дверь",
+		"name": "Дверь", "reward": "door", "reward_name": " Дверь",
 		"raccoon_after": "house_done",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -171,7 +171,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	11: {
-		"name": "Коса", "reward": "scythe", "reward_name": "🌿 Коса",
+		"name": "Коса", "reward": "scythe", "reward_name": " Коса",
 		"cells": [
 			Vector2i(5,1),Vector2i(6,1),
 			Vector2i(5,2),Vector2i(6,2),
@@ -183,7 +183,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	12: {
-		"name": "Забор", "reward": "fence", "reward_name": "🌿 Забор",
+		"name": "Забор", "reward": "fence", "reward_name": " Забор",
 		"cells": [
 			Vector2i(0,3),Vector2i(3,3),Vector2i(6,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(3,4),Vector2i(6,4),Vector2i(9,4),
@@ -194,7 +194,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	13: {
-		"name": "Садовая дорожка", "reward": "path", "reward_name": "🪨 Дорожка",
+		"name": "Садовая дорожка", "reward": "path", "reward_name": " Дорожка",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),
@@ -207,7 +207,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	14: {
-		"name": "Гвоздь", "reward": "nail", "reward_name": "🔩 Гвоздь",
+		"name": "Гвоздь", "reward": "nail", "reward_name": " Гвоздь",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),Vector2i(8,1),
 			Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),
@@ -222,7 +222,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	15: {
-		"name": "Дом готов!", "reward": "house_complete", "reward_name": "🏠 Дом построен",
+		"name": "Дом готов!", "reward": "house_complete", "reward_name": " Дом построен",
 		"raccoon_after": "house_complete",
 		"cells": [
 			Vector2i(4,1),Vector2i(5,1),
@@ -236,7 +236,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	16: {
-		"name": "Колодец", "reward": "well", "reward_name": "🪣 Колодец",
+		"name": "Колодец", "reward": "well", "reward_name": " Колодец",
 		"cells": [
 			Vector2i(4,2),Vector2i(5,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
@@ -247,7 +247,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	17: {
-		"name": "Фундамент амбара", "reward": "barn_foundation", "reward_name": "🧱 Фундамент амбара",
+		"name": "Фундамент амбара", "reward": "barn_foundation", "reward_name": " Фундамент амбара",
 		"raccoon_before": "barn_start",
 		"cells": [
 			Vector2i(0,7),Vector2i(1,7),Vector2i(2,7),Vector2i(3,7),Vector2i(4,7),Vector2i(5,7),Vector2i(6,7),Vector2i(7,7),Vector2i(8,7),Vector2i(9,7),
@@ -257,7 +257,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	18: {
-		"name": "Каркас амбара", "reward": "barn_beam", "reward_name": "🪵 Каркас амбара",
+		"name": "Каркас амбара", "reward": "barn_beam", "reward_name": " Каркас амбара",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(9,4),
@@ -269,7 +269,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	19: {
-		"name": "Крыша амбара", "reward": "barn_roof", "reward_name": "🏚️ Крыша амбара",
+		"name": "Крыша амбара", "reward": "barn_roof", "reward_name": " Крыша амбара",
 		"cells": [
 			Vector2i(4,1),Vector2i(5,1),
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
@@ -279,7 +279,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	20: {
-		"name": "Стены амбара", "reward": "barn_wall", "reward_name": "🏗️ Стены амбара",
+		"name": "Стены амбара", "reward": "barn_wall", "reward_name": " Стены амбара",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(1,4),Vector2i(8,4),Vector2i(9,4),
@@ -291,7 +291,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	21: {
-		"name": "Ворота амбара", "reward": "barn_gate", "reward_name": "🚪 Ворота амбара",
+		"name": "Ворота амбара", "reward": "barn_gate", "reward_name": " Ворота амбара",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(1,4),Vector2i(8,4),Vector2i(9,4),
@@ -303,7 +303,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	22: {
-		"name": "Готовый амбар", "reward": "barn_done", "reward_name": "🏚️ Амбар построен",
+		"name": "Готовый амбар", "reward": "barn_done", "reward_name": " Амбар построен",
 		"raccoon_after": "barn_done",
 		"build_stage_after": 3,
 		"cells": [
@@ -319,7 +319,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	23: {
-		"name": "Труба", "reward": "chimney", "reward_name": "🔥 Труба",
+		"name": "Труба", "reward": "chimney", "reward_name": " Труба",
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),
 			Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -330,7 +330,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	24: {
-		"name": "Крыльцо", "reward": "porch", "reward_name": "🏡 Крыльцо",
+		"name": "Крыльцо", "reward": "porch", "reward_name": " Крыльцо",
 		"cells": [
 			Vector2i(8,4),Vector2i(9,4),
 			Vector2i(6,5),Vector2i(7,5),Vector2i(8,5),Vector2i(9,5),
@@ -340,7 +340,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	121: {
-		"name": "Газон", "reward": "plank", "reward_name": "🌿 Газон",
+		"name": "Газон", "reward": "plank", "reward_name": " Газон",
 		"cells": [
 			Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),
 			Vector2i(0,5),Vector2i(1,5),Vector2i(2,5),Vector2i(3,5),Vector2i(4,5),Vector2i(5,5),Vector2i(6,5),Vector2i(7,5),Vector2i(8,5),Vector2i(9,5),
@@ -350,7 +350,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	122: {
-		"name": "Клумба", "reward": "log", "reward_name": "🌸 Клумба",
+		"name": "Клумба", "reward": "log", "reward_name": " Клумба",
 		"cells": [
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
@@ -361,7 +361,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	123: {
-		"name": "Забор", "reward": "fence", "reward_name": "🌿 Забор",
+		"name": "Забор", "reward": "fence", "reward_name": " Забор",
 		"cells": [
 			Vector2i(0,3),Vector2i(3,3),Vector2i(6,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(3,4),Vector2i(6,4),Vector2i(9,4),
@@ -372,7 +372,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	124: {
-		"name": "Садовая дорожка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Садовая дорожка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),
@@ -385,7 +385,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	25: {
-		"name": "Дерево", "reward": "log", "reward_name": "🌲 Дерево",
+		"name": "Дерево", "reward": "log", "reward_name": " Дерево",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -398,7 +398,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	26: {
-		"name": "Куст", "reward": "log", "reward_name": "🌿 Куст",
+		"name": "Куст", "reward": "log", "reward_name": " Куст",
 		"cells": [
 			Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
 			Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),
@@ -408,7 +408,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	27: {
-		"name": "Скамейка", "reward": "log", "reward_name": "🪵 Скамейка",
+		"name": "Скамейка", "reward": "log", "reward_name": " Скамейка",
 		"cells": [
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
 			Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),
@@ -419,7 +419,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	28: {
-		"name": "Колодец", "reward": "log", "reward_name": "🪣 Колодец",
+		"name": "Колодец", "reward": "log", "reward_name": " Колодец",
 		"cells": [
 			Vector2i(3,1),Vector2i(6,1),
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
@@ -432,7 +432,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	29: {
-		"name": "Пруд", "reward": "log", "reward_name": "💧 Пруд",
+		"name": "Пруд", "reward": "log", "reward_name": " Пруд",
 		"cells": [
 			Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
 			Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),
@@ -443,7 +443,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	30: {
-		"name": "Грядки", "reward": "log", "reward_name": "🌱 Грядки",
+		"name": "Грядки", "reward": "log", "reward_name": " Грядки",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(9,4),
@@ -455,7 +455,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	31: {
-		"name": "Амбар", "reward": "log", "reward_name": "🏚️ Амбар",
+		"name": "Амбар", "reward": "log", "reward_name": " Амбар",
 		"build_stage_after": 3,
 		"cells": [
 			Vector2i(4,1),Vector2i(5,1),
@@ -469,7 +469,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	32: {
-		"name": "Ворота", "reward": "log", "reward_name": "🚪 Ворота",
+		"name": "Ворота", "reward": "log", "reward_name": " Ворота",
 		"cells": [
 			Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(7,3),Vector2i(8,3),
@@ -481,7 +481,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	33: {
-		"name": "Корова", "reward": "log", "reward_name": "🐄 Корова",
+		"name": "Корова", "reward": "log", "reward_name": " Корова",
 		"cells": [
 			Vector2i(1,2),Vector2i(2,2),Vector2i(7,2),Vector2i(8,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
@@ -493,7 +493,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	34: {
-		"name": "Курица", "reward": "log", "reward_name": "🐔 Курица",
+		"name": "Курица", "reward": "log", "reward_name": " Курица",
 		"cells": [
 			Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),
 			Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),
@@ -506,7 +506,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	35: {
-		"name": "Свинья", "reward": "log", "reward_name": "🐷 Свинья",
+		"name": "Свинья", "reward": "log", "reward_name": " Свинья",
 		"cells": [
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
 			Vector2i(0,4),Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),Vector2i(9,4),
@@ -517,7 +517,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	36: {
-		"name": "Лошадь", "reward": "log", "reward_name": "🐴 Лошадь",
+		"name": "Лошадь", "reward": "log", "reward_name": " Лошадь",
 		"cells": [
 			Vector2i(6,1),Vector2i(7,1),Vector2i(8,1),
 			Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),
@@ -530,7 +530,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	37: {
-		"name": "Овца", "reward": "log", "reward_name": "🐑 Овца",
+		"name": "Овца", "reward": "log", "reward_name": " Овца",
 		"cells": [
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
@@ -541,7 +541,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	38: {
-		"name": "Кормушка", "reward": "log", "reward_name": "🪣 Кормушка",
+		"name": "Кормушка", "reward": "log", "reward_name": " Кормушка",
 		"cells": [
 			Vector2i(0,4),Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),Vector2i(9,4),
 			Vector2i(0,5),Vector2i(9,5),
@@ -550,7 +550,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	39: {
-		"name": "Стог сена", "reward": "log", "reward_name": "🌾 Сено",
+		"name": "Стог сена", "reward": "log", "reward_name": " Сено",
 		"cells": [
 			Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
 			Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),
@@ -560,7 +560,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	40: {
-		"name": "Мельница", "reward": "log", "reward_name": "🌀 Мельница",
+		"name": "Мельница", "reward": "log", "reward_name": " Мельница",
 		"build_stage_after": 4,
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),
@@ -575,7 +575,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	41: {
-		"name": "Поле", "reward": "log", "reward_name": "🌾 Поле",
+		"name": "Поле", "reward": "log", "reward_name": " Поле",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(2,4),Vector2i(4,4),Vector2i(6,4),Vector2i(8,4),
@@ -587,7 +587,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	42: {
-		"name": "Трактор", "reward": "log", "reward_name": "🚜 Трактор",
+		"name": "Трактор", "reward": "log", "reward_name": " Трактор",
 		"cells": [
 			Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),
 			Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
@@ -598,7 +598,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	43: {
-		"name": "Теплица", "reward": "log", "reward_name": "🌿 Теплица",
+		"name": "Теплица", "reward": "log", "reward_name": " Теплица",
 		"cells": [
 			Vector2i(4,2),Vector2i(5,2),
 			Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
@@ -610,7 +610,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	44: {
-		"name": "Улей", "reward": "log", "reward_name": "🍯 Улей",
+		"name": "Улей", "reward": "log", "reward_name": " Улей",
 		"cells": [
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
@@ -622,7 +622,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	45: {
-		"name": "Силос", "reward": "log", "reward_name": "🏗️ Силос",
+		"name": "Силос", "reward": "log", "reward_name": " Силос",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -634,7 +634,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	46: {
-		"name": "Огород", "reward": "log", "reward_name": "🥕 Огород",
+		"name": "Огород", "reward": "log", "reward_name": " Огород",
 		"cells": [
 			Vector2i(0,2),Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),Vector2i(8,2),Vector2i(9,2),
 			Vector2i(0,3),Vector2i(9,3),
@@ -646,7 +646,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	47: {
-		"name": "Рыбный пруд", "reward": "log", "reward_name": "🐟 Пруд",
+		"name": "Рыбный пруд", "reward": "log", "reward_name": " Пруд",
 		"cells": [
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
 			Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),
@@ -657,7 +657,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	48: {
-		"name": "Мост", "reward": "log", "reward_name": "🌉 Мост",
+		"name": "Мост", "reward": "log", "reward_name": " Мост",
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
 			Vector2i(0,4),Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),Vector2i(7,4),Vector2i(8,4),Vector2i(9,4),
@@ -668,7 +668,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	49: {
-		"name": "Флюгер", "reward": "log", "reward_name": "🌀 Флюгер",
+		"name": "Флюгер", "reward": "log", "reward_name": " Флюгер",
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),
@@ -683,7 +683,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	50: {
-		"name": "Большая ферма", "reward": "log", "reward_name": "🏡 Ферма",
+		"name": "Большая ферма", "reward": "log", "reward_name": " Ферма",
 		"build_stage_after": 5,
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),
@@ -699,7 +699,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	51: {
-		"name": "Замок", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Замок", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,0),Vector2i(2,0),Vector2i(4,0),Vector2i(6,0),
 			Vector2i(0,1),Vector2i(2,1),Vector2i(4,1),Vector2i(6,1),
@@ -711,7 +711,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	52: {
-		"name": "Корабль", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Корабль", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),
@@ -722,7 +722,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	53: {
-		"name": "Кот", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Кот", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(6,0),Vector2i(7,0),
 			Vector2i(0,1),Vector2i(1,1),Vector2i(6,1),Vector2i(7,1),
@@ -733,7 +733,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	54: {
-		"name": "Пингвин", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Пингвин", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
@@ -745,7 +745,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	55: {
-		"name": "Кролик", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Кролик", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,0),Vector2i(2,0),Vector2i(5,0),Vector2i(6,0),
 			Vector2i(1,1),Vector2i(5,1),
@@ -757,7 +757,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	56: {
-		"name": "Птица", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Птица", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),
 			Vector2i(0,2),Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -768,7 +768,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	57: {
-		"name": "Черепаха", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Черепаха", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
 			Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
@@ -778,7 +778,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	58: {
-		"name": "Бабочка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Бабочка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),Vector2i(6,1),Vector2i(7,1),
 			Vector2i(0,2),Vector2i(1,2),Vector2i(2,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -788,7 +788,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	59: {
-		"name": "Цветок", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Цветок", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -799,7 +799,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	60: {
-		"name": "Снежинка", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Снежинка", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),
 			Vector2i(1,2),Vector2i(3,2),Vector2i(4,2),Vector2i(6,2),
@@ -809,7 +809,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	61: {
-		"name": "Буква Б", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Б", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(1,2),
@@ -820,7 +820,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	62: {
-		"name": "Буква Д", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква Д", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
 			Vector2i(1,3),Vector2i(3,3),Vector2i(6,3),
@@ -831,7 +831,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	63: {
-		"name": "Буква Ж", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Ж", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),
 			Vector2i(1,2),Vector2i(3,2),Vector2i(5,2),Vector2i(7,2),
@@ -841,7 +841,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	64: {
-		"name": "Буква З", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква З", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(6,2),
@@ -851,7 +851,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	65: {
-		"name": "Буква И", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква И", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(6,1),
 			Vector2i(1,2),Vector2i(5,2),Vector2i(6,2),
@@ -863,7 +863,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	66: {
-		"name": "Буква К", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква К", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(1,2),Vector2i(4,2),Vector2i(5,2),
@@ -874,7 +874,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	67: {
-		"name": "Буква Р", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Р", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
 			Vector2i(1,2),Vector2i(5,2),Vector2i(6,2),
@@ -885,7 +885,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	68: {
-		"name": "Буква Т", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Т", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),
 			Vector2i(3,2),Vector2i(4,2),
@@ -896,7 +896,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	69: {
-		"name": "Буква У", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква У", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,1),Vector2i(6,1),
 			Vector2i(1,2),Vector2i(6,2),
@@ -908,7 +908,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	70: {
-		"name": "Буква Ф", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Ф", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,1),Vector2i(4,1),
 			Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
@@ -919,7 +919,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	71: {
-		"name": "Буква Ш", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква Ш", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(0,1),Vector2i(3,1),Vector2i(6,1),
 			Vector2i(0,2),Vector2i(3,2),Vector2i(6,2),
@@ -929,7 +929,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	72: {
-		"name": "Буква Щ", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Буква Щ", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,1),Vector2i(3,1),Vector2i(5,1),
 			Vector2i(0,2),Vector2i(3,2),Vector2i(5,2),
@@ -940,7 +940,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	73: {
-		"name": "Знак вопроса", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Знак вопроса", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),
 			Vector2i(1,1),Vector2i(6,1),
@@ -951,7 +951,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	74: {
-		"name": "Бесконечность", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Бесконечность", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,2),Vector2i(2,2),Vector2i(5,2),Vector2i(6,2),
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
@@ -959,7 +959,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	75: {
-		"name": "Восьмёрка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Восьмёрка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
 			Vector2i(1,2),Vector2i(6,2),
@@ -969,7 +969,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	76: {
-		"name": "Трапеция", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Трапеция", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),
 			Vector2i(1,4),Vector2i(2,4),Vector2i(3,4),Vector2i(4,4),Vector2i(5,4),Vector2i(6,4),
@@ -977,7 +977,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	77: {
-		"name": "Параллелограмм", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Параллелограмм", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),
@@ -985,7 +985,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	78: {
-		"name": "Буква Э", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Буква Э", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(1,2),Vector2i(6,2),
@@ -995,7 +995,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	79: {
-		"name": "Буква Ю", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Буква Ю", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
 			Vector2i(1,2),Vector2i(3,2),Vector2i(5,2),Vector2i(6,2),
@@ -1005,7 +1005,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	80: {
-		"name": "Буква Я", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква Я", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
 			Vector2i(1,2),Vector2i(5,2),Vector2i(6,2),
@@ -1016,7 +1016,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	81: {
-		"name": "Лабиринт", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Лабиринт", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),
 			Vector2i(0,1),Vector2i(7,1),
@@ -1028,7 +1028,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	82: {
-		"name": "Соты", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Соты", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(5,1),Vector2i(6,1),
 			Vector2i(0,2),Vector2i(3,2),Vector2i(4,2),Vector2i(7,2),
@@ -1040,7 +1040,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	83: {
-		"name": "Факел", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Факел", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -1052,7 +1052,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	84: {
-		"name": "Большая корона", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Большая корона", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,0),Vector2i(3,0),Vector2i(4,0),Vector2i(7,0),
 			Vector2i(0,1),Vector2i(1,1),Vector2i(3,1),Vector2i(4,1),Vector2i(6,1),Vector2i(7,1),
@@ -1063,7 +1063,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	85: {
-		"name": "Паутина", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Паутина", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(1,1),Vector2i(3,1),Vector2i(4,1),Vector2i(6,1),
@@ -1075,7 +1075,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	86: {
-		"name": "Пила", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Пила", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(0,2),Vector2i(2,2),Vector2i(4,2),Vector2i(6,2),
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
@@ -1083,7 +1083,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	87: {
-		"name": "Кристалл", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Кристалл", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
@@ -1094,7 +1094,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	88: {
-		"name": "Ажурный ромб", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Ажурный ромб", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(2,1),Vector2i(5,1),
@@ -1106,7 +1106,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	89: {
-		"name": "Цепочка", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Цепочка", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(0,1),Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),
 			Vector2i(0,2),Vector2i(3,2),
@@ -1117,7 +1117,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	90: {
-		"name": "Арка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Арка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),
 			Vector2i(0,1),Vector2i(1,1),Vector2i(6,1),Vector2i(7,1),
@@ -1128,7 +1128,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	91: {
-		"name": "Медаль", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Медаль", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(3,1),Vector2i(4,1),
@@ -1140,7 +1140,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	92: {
-		"name": "Нота", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Нота", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),
 			Vector2i(4,1),
@@ -1152,7 +1152,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	93: {
-		"name": "Звезда 8 лучей", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Звезда 8 лучей", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(1,1),Vector2i(3,1),Vector2i(4,1),Vector2i(6,1),
@@ -1164,7 +1164,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	94: {
-		"name": "Мельница", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Мельница", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
@@ -1176,7 +1176,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	95: {
-		"name": "Спираль", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Спираль", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),
 			Vector2i(7,1),
@@ -1187,7 +1187,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	96: {
-		"name": "Буква N", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Буква N", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,1),Vector2i(6,1),
 			Vector2i(1,2),Vector2i(2,2),Vector2i(6,2),
@@ -1198,7 +1198,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	97: {
-		"name": "Молоток", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Молоток", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),
 			Vector2i(0,1),Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
@@ -1210,7 +1210,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	98: {
-		"name": "Трилистник", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Трилистник", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -1222,7 +1222,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	99: {
-		"name": "Корона финальная", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Корона финальная", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,0),Vector2i(7,0),
 			Vector2i(0,1),Vector2i(2,1),Vector2i(4,1),Vector2i(6,1),Vector2i(7,1),
@@ -1234,7 +1234,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	100: {
-		"name": "Мастер-строитель", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Мастер-строитель", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),
@@ -1248,7 +1248,7 @@ const LEVEL_SHAPES = {
 	},
 	# Серия фундамента (build_stage 1→2)
 	101: {
-		"name": "Деревянные балки", "reward": "beam", "reward_name": "🪵 Балки",
+		"name": "Деревянные балки", "reward": "beam", "reward_name": " Балки",
 		"next_level": 102, "build_stage_after": -1,
 		"cells": [
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3),Vector2i(6,3),Vector2i(7,3),
@@ -1258,7 +1258,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	102: {
-		"name": "Деревянный фундамент", "reward": "foundation", "reward_name": "🧱 Фундамент",
+		"name": "Деревянный фундамент", "reward": "foundation", "reward_name": " Фундамент",
 		"build_stage_after": 2,
 		"cells": [
 			Vector2i(0,2),Vector2i(1,2),Vector2i(2,2),Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),Vector2i(7,2),
@@ -1269,7 +1269,7 @@ const LEVEL_SHAPES = {
 	},
 	# Серия стен (build_stage 2→3)
 	103: {
-		"name": "Стеновые доски", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Стеновые доски", "reward": "plank", "reward_name": " Доски",
 		"build_stage_after": -1,
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),
@@ -1279,7 +1279,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	104: {
-		"name": "Деревянные стены", "reward": "wall", "reward_name": "🏗️ Стены",
+		"name": "Деревянные стены", "reward": "wall", "reward_name": " Стены",
 		"build_stage_after": 3,
 		"cells": [
 			Vector2i(0,0),Vector2i(7,0),
@@ -1292,7 +1292,7 @@ const LEVEL_SHAPES = {
 	},
 	# Серия крыши (build_stage 3→4)
 	105: {
-		"name": "Стропила", "reward": "rafter", "reward_name": "🪵 Стропила",
+		"name": "Стропила", "reward": "rafter", "reward_name": " Стропила",
 		"build_stage_after": -1,
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
@@ -1302,7 +1302,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	106: {
-		"name": "Крыша", "reward": "roof", "reward_name": "🏠 Крыша",
+		"name": "Крыша", "reward": "roof", "reward_name": " Крыша",
 		"build_stage_after": 4,
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),
@@ -1313,7 +1313,7 @@ const LEVEL_SHAPES = {
 	},
 	# Забор (build_stage 4→5)
 	107: {
-		"name": "Забор", "reward": "fence", "reward_name": "🌿 Забор",
+		"name": "Забор", "reward": "fence", "reward_name": " Забор",
 		"build_stage_after": 5,
 		"cells": [
 			Vector2i(0,0),Vector2i(0,1),Vector2i(0,2),Vector2i(0,3),
@@ -1324,7 +1324,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	108: {
-		"name": "Замок", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Замок", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(1,0),Vector2i(3,0),Vector2i(6,0),Vector2i(8,0),
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(6,1),Vector2i(7,1),Vector2i(8,1),
@@ -1337,7 +1337,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	109: {
-		"name": "Якорь", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Якорь", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -1350,7 +1350,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	110: {
-		"name": "Корабль", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Корабль", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(4,1),Vector2i(5,1),
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
@@ -1360,7 +1360,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	111: {
-		"name": "Спираль", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Спираль", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(1,1),Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),Vector2i(8,1),
 			Vector2i(1,2),Vector2i(8,2),
@@ -1372,7 +1372,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	112: {
-		"name": "Бабочка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Бабочка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,2),Vector2i(1,2),Vector2i(8,2),Vector2i(9,2),
 			Vector2i(0,3),Vector2i(1,3),Vector2i(2,3),Vector2i(7,3),Vector2i(8,3),Vector2i(9,3),
@@ -1383,7 +1383,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	113: {
-		"name": "Осьминог", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Осьминог", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),
 			Vector2i(2,1),Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),
@@ -1394,7 +1394,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	114: {
-		"name": "Радуга", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Радуга", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(3,2),Vector2i(4,2),Vector2i(5,2),Vector2i(6,2),
 			Vector2i(1,3),Vector2i(2,3),Vector2i(3,3),Vector2i(6,3),Vector2i(7,3),Vector2i(8,3),
@@ -1404,7 +1404,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	115: {
-		"name": "Ёлка", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Ёлка", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(4,0),Vector2i(5,0),
 			Vector2i(3,1),Vector2i(4,1),Vector2i(5,1),Vector2i(6,1),
@@ -1417,7 +1417,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	116: {
-		"name": "Краб", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Краб", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(0,2),Vector2i(9,2),
 			Vector2i(0,3),Vector2i(1,3),Vector2i(9,3),
@@ -1428,7 +1428,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	117: {
-		"name": "Лабиринт", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Лабиринт", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),Vector2i(8,0),Vector2i(9,0),
 			Vector2i(0,1),Vector2i(9,1),
@@ -1442,7 +1442,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	118: {
-		"name": "Дракон", "reward": "log", "reward_name": "🪵 Бревно",
+		"name": "Дракон", "reward": "log", "reward_name": " Бревно",
 		"cells": [
 			Vector2i(7,0),Vector2i(8,0),Vector2i(9,0),
 			Vector2i(5,1),Vector2i(6,1),Vector2i(7,1),Vector2i(8,1),
@@ -1455,7 +1455,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	119: {
-		"name": "Шахматы", "reward": "plank", "reward_name": "🪵 Доски",
+		"name": "Шахматы", "reward": "plank", "reward_name": " Доски",
 		"cells": [
 			Vector2i(0,2),Vector2i(2,2),Vector2i(4,2),Vector2i(6,2),Vector2i(8,2),
 			Vector2i(1,3),Vector2i(3,3),Vector2i(5,3),Vector2i(7,3),Vector2i(9,3),
@@ -1465,7 +1465,7 @@ const LEVEL_SHAPES = {
 		]
 	},
 	120: {
-		"name": "Квантовый", "reward": "foundation", "reward_name": "🧱 Камень",
+		"name": "Квантовый", "reward": "foundation", "reward_name": " Камень",
 		"cells": [
 			Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(7,0),Vector2i(8,0),Vector2i(9,0),
 			Vector2i(0,1),Vector2i(3,1),Vector2i(6,1),Vector2i(9,1),
@@ -1625,7 +1625,7 @@ var skill_buttons = []
 
 func _setup_dev_button():
 	var btn = Button.new()
-	btn.text = "⚡ WIN"
+	btn.text = " WIN"
 	btn.position = Vector2(8, 96)
 	btn.size = Vector2(80, 44)
 	btn.add_theme_font_size_override("font_size", 18)
@@ -2057,7 +2057,7 @@ func _setup_park_slot():
 	panel.add_theme_stylebox_override("panel", sbox)
 	var lbl = Label.new()
 	lbl.name = "EmptyHint"
-	lbl.text = "📦"
+	lbl.text = ""
 	lbl.add_theme_font_size_override("font_size", 36)
 	lbl.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -2144,7 +2144,7 @@ func _setup_skills_ui():
 	if not skill_bar:
 		return
 	var skill_keys = ["axe_skill", "skip_skill", "bomb_skill"]
-	var skill_icons = ["🪓", "🔄", "💣"]
+	var skill_icons = ["", "", ""]
 	var skill_names = ["Топорик", "Смена", "Бомба"]
 	for i in range(3):
 		var btn = skill_bar.get_node_or_null("Skill%d" % (i+1))
@@ -2156,7 +2156,7 @@ func _setup_skills_ui():
 			btn.modulate = Color(1,1,1)
 			btn.disabled = sk["charges"] <= 0
 		else:
-			btn.text = "🔒\n%s" % skill_names[i]
+			btn.text = "\n%s" % skill_names[i]
 			btn.modulate = Color(0.5, 0.5, 0.5)
 			btn.disabled = true
 	var undo_btn2 = get_node_or_null("UI/BtnUndo")
@@ -2327,7 +2327,7 @@ func _spawn_confetti_rain():
 
 func _show_combo_label():
 	var lbl = Label.new()
-	lbl.text = "COMBO x%d! +%d💰" % [_combo, _combo * 3]
+	lbl.text = "COMBO x%d! +%d" % [_combo, _combo * 3]
 	lbl.add_theme_font_size_override("font_size", 28)
 	lbl.add_theme_color_override("font_color", Color(0.95, 0.75, 0.1, 1))
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -2355,7 +2355,7 @@ func _add_hint_button():
 	btn.add_theme_stylebox_override("pressed", sbox)
 	btn.add_theme_font_size_override("font_size", 18)
 	btn.add_theme_color_override("font_color", Color(0.2, 0.1, 0.0, 1))
-	btn.text = "💡 30💰"
+	btn.text = " 30"
 	btn.position = Vector2(568, 1020)
 	btn.size = Vector2(140, 56)
 	ui_layer.add_child(btn)
@@ -2363,7 +2363,7 @@ func _add_hint_button():
 
 func _on_hint_pressed():
 	if GameState.coins < 30:
-		_show_toast("💰 Недостаточно монет" if GameState.language == "ru" else "💰 Not enough coins")
+		_show_toast(" Недостаточно монет" if GameState.language == "ru" else " Not enough coins")
 		return
 	# Find first non-null slot piece and try all positions
 	var piece: Node2D = null
@@ -2381,13 +2381,13 @@ func _on_hint_pressed():
 				GameState.coins -= 30
 				GameState.save_game()
 				grid_board.set_preview(piece.cells, gx, gy)
-				_show_toast("💡 Подсказка!" if GameState.language == "ru" else "💡 Hint!")
+				_show_toast(" Подсказка!" if GameState.language == "ru" else " Hint!")
 				# Auto-clear preview after 2.5s
 				await get_tree().create_timer(2.5).timeout
 				if is_instance_valid(self) and grid_board:
 					grid_board.clear_preview()
 				return
-	_show_toast("🤔 Нет подходящего места" if GameState.language == "ru" else "🤔 No valid spot")
+	_show_toast(" Нет подходящего места" if GameState.language == "ru" else " No valid spot")
 
 func _show_toast(msg: String):
 	var lbl = Label.new()
@@ -2469,14 +2469,14 @@ func _show_prelevel_popup():
 		timer_lbl.add_theme_color_override("font_color", Color(0.15, 0.42, 0.68, 1))
 		vbox.add_child(timer_lbl)
 		var hint_lbl = Label.new()
-		hint_lbl.text = "30с ★★★  •  50с ★★  •  80с ★"
+		hint_lbl.text = "30с   •  50с   •  80с "
 		hint_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		hint_lbl.add_theme_font_size_override("font_size", 16)
 		hint_lbl.add_theme_color_override("font_color", Color(0.55, 0.53, 0.50, 1))
 		vbox.add_child(hint_lbl)
 	else:
 		var bonus_lbl = Label.new()
-		bonus_lbl.text = "💡 Без навыков → x2 монеты"
+		bonus_lbl.text = " Без навыков → x2 монеты"
 		bonus_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		bonus_lbl.add_theme_font_size_override("font_size", 16)
 		bonus_lbl.add_theme_color_override("font_color", Color(0.55, 0.53, 0.50, 1))
@@ -2514,14 +2514,14 @@ func _show_prelevel_popup():
 
 func _show_tutorial_hint(level: int):
 	var hints_ru = [
-		"👆 Перетащи фигуру на силуэт!",
-		"🧩 Заполни весь силуэт фигурами",
-		"💡 Зажми фигуру — чтобы взять её обратно",
+		" Перетащи фигуру на силуэт!",
+		" Заполни весь силуэт фигурами",
+		" Зажми фигуру — чтобы взять её обратно",
 	]
 	var hints_en = [
-		"👆 Drag a piece onto the silhouette!",
-		"🧩 Fill the entire silhouette",
-		"💡 Long-press a placed piece to pick it back up",
+		" Drag a piece onto the silhouette!",
+		" Fill the entire silhouette",
+		" Long-press a placed piece to pick it back up",
 	]
 	var text = hints_en[level - 1] if GameState.language == "en" else hints_ru[level - 1]
 
@@ -2653,7 +2653,7 @@ func _show_complete_popup(stars: int, coins_earned: int, reward_name: String):
 	margin.add_child(vbox)
 
 	var title = Label.new()
-	title.text = "🏆 " + GameState.t("level_complete")
+	title.text = " " + GameState.t("level_complete")
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_font_size_override("font_size", 30)
 	title.add_theme_color_override("font_color", Color(0.05, 0.03, 0.02, 1))
@@ -2674,7 +2674,7 @@ func _show_complete_popup(stars: int, coins_earned: int, reward_name: String):
 		vbox.add_child(hbox)
 		for i in range(3):
 			var star = Label.new()
-			star.text = "★" if i < stars else "☆"
+			star.text = "" if i < stars else ""
 			star.add_theme_font_size_override("font_size", 54)
 			if i < stars:
 				star.add_theme_color_override("font_color", Color(0.90, 0.68, 0.05, 1))
@@ -2695,7 +2695,7 @@ func _show_complete_popup(stars: int, coins_earned: int, reward_name: String):
 
 	if coins_earned > 0:
 		var coins_lbl = Label.new()
-		coins_lbl.text = "+%d 💰" % coins_earned
+		coins_lbl.text = "+%d " % coins_earned
 		coins_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		coins_lbl.add_theme_font_size_override("font_size", 26)
 		coins_lbl.add_theme_color_override("font_color", Color(0.68, 0.48, 0.05, 1))

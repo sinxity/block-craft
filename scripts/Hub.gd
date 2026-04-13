@@ -1,6 +1,6 @@
 extends Node2D
 
-# ⚠️ DEV ONLY — установи false перед релизом
+#  DEV ONLY — установи false перед релизом
 const DEV_MODE = true
 
 const STAGE_LEVELS = {
@@ -135,7 +135,7 @@ func _ready():
 
 func _setup_dev_button():
 	var btn = Button.new()
-	btn.text = "🔓 ALL"
+	btn.text = " ALL"
 	btn.position = Vector2(8, 96)
 	btn.size = Vector2(90, 44)
 	btn.add_theme_font_size_override("font_size", 16)
@@ -209,8 +209,8 @@ func _check_narrative():
 	if inv.get("intro_seen", 0) == 0:
 		await get_tree().create_timer(0.6).timeout
 		_show_raccoon_sequence([
-			"Привет! Я Енот — живу здесь уже очень давно 🦝\nЭтот участок в лесу наконец-то купил фермер!",
-			"Видишь? Кругом деревья и запустение...\nНо мы вместе всё обустроим! Начнём с инструментов — жми Играть! 🪓",
+			"Привет! Я Енот — живу здесь уже очень давно \nЭтот участок в лесу наконец-то купил фермер!",
+			"Видишь? Кругом деревья и запустение...\nНо мы вместе всё обустроим! Начнём с инструментов — жми Играть! ",
 		], func():
 			GameState.inventory["intro_seen"] = 1
 			GameState.save_game()
@@ -219,11 +219,11 @@ func _check_narrative():
 
 	# Tool reward popups
 	for item in [
-		["axe",    "🪓", "Топор",   "Срубите деревья на участке!"],
-		["hammer", "🔨", "Молоток", "Пригодится для строительства!"],
-		["rope",   "🪢", "Верёвка", "Верёвка для стройки!"],
-		["shovel", "🪚", "Лопата",  "Для земляных работ на участке!"],
-		["nail",   "🔩", "Гвоздь",  "Незаменим для постройки амбара!"],
+		["axe",    "", "Топор",   "Срубите деревья на участке!"],
+		["hammer", "", "Молоток", "Пригодится для строительства!"],
+		["rope",   "", "Верёвка", "Верёвка для стройки!"],
+		["shovel", "", "Лопата",  "Для земляных работ на участке!"],
+		["nail",   "", "Гвоздь",  "Незаменим для постройки амбара!"],
 	]:
 		var key = item[0]
 		if inv.get(key, 0) > 0 and inv.get(key + "_seen", 0) == 0:
@@ -235,7 +235,7 @@ func _check_narrative():
 	if inv.get("axe", 0) > 0 and inv.get("axe_seen", 0) > 0 and not GameState.hub_trees_chopped:
 		_make_trees_tappable()
 		if inv.get("tree_hint_done", 0) == 0:
-			_show_hint("🪓 Нажимай на деревья чтобы срубить их!")
+			_show_hint(" Нажимай на деревья чтобы срубить их!")
 		return
 
 	# House sprite after trees chopped AND all tools collected
@@ -249,19 +249,19 @@ func _check_narrative():
 				if inv.get("raccoon_met", 0) == 0:
 					await get_tree().create_timer(0.9).timeout
 					_show_raccoon_dialog(
-						"Эй! Стоп!\nЯ тут живу уже целый год!\nЕсли оставишь меня — помогу строить! 🦝",
+						"Эй! Стоп!\nЯ тут живу уже целый год!\nЕсли оставишь меня — помогу строить! ",
 						func(): pass
 					)
 			if next > 0:
 				_update_story_btn(next)
 		else:
 			# Trees chopped but still collecting tools — hint to keep playing
-			_show_hint("🪓 Срублено! Продолжай собирать инструменты")
+			_show_hint(" Срублено! Продолжай собирать инструменты")
 		# House complete raccoon
 		if inv.get("door", 0) > 0 and inv.get("house_done_seen", 0) == 0:
 			await get_tree().create_timer(0.6).timeout
 			_show_raccoon_dialog(
-				"Ура! Дом готов! 🏠\nТеперь займёмся двором — нужна коса, забор и дорожка!",
+				"Ура! Дом готов! \nТеперь займёмся двором — нужна коса, забор и дорожка!",
 				func():
 					GameState.inventory["house_done_seen"] = 1
 					GameState.save_game()
@@ -270,7 +270,7 @@ func _check_narrative():
 		if inv.get("nail", 0) > 0 and inv.get("barn_start_seen", 0) == 0 and inv.get("barn_foundation", 0) == 0:
 			await get_tree().create_timer(0.6).timeout
 			_show_raccoon_dialog(
-				"Гвоздь нашли — отлично! 🔩\nТеперь построим амбар! Мне там очень нужно место для запасов еды! 🦝",
+				"Гвоздь нашли — отлично! \nТеперь построим амбар! Мне там очень нужно место для запасов еды! ",
 				func():
 					GameState.inventory["barn_start_seen"] = 1
 					GameState.save_game()
@@ -279,7 +279,7 @@ func _check_narrative():
 		if inv.get("barn_done", 0) > 0 and inv.get("barn_done_seen", 0) == 0:
 			await get_tree().create_timer(0.6).timeout
 			_show_raccoon_dialog(
-				"Амбар готов!! 🏚️\nЯ уже занёс туда все свои запасы! Осталось добавить трубу и крыльцо к дому!",
+				"Амбар готов!! \nЯ уже занёс туда все свои запасы! Осталось добавить трубу и крыльцо к дому!",
 				func():
 					GameState.inventory["barn_done_seen"] = 1
 					GameState.save_game()
@@ -327,26 +327,26 @@ func _update_story_btn(next_lvl: int):
 	var btn = get_node_or_null("UI/BtnNextLevel")
 	if not btn: return
 	var labels = {
-		5:  "🧱\nФундамент",
-		6:  "🪵\nКаркас",
-		7:  "🏠\nКрыша",
-		8:  "🏗️\nСтены",
-		9:  "🪟\nОкно",
-		10: "🚪\nДверь",
-		11: "🌿\nКоса",
-		12: "🌿\nЗабор",
-		13: "🪨\nДорожка",
-		14: "🔩\nГвоздь",
-		15: "🏠\nДом готов!",
-		16: "🪣\nКолодец",
-		17: "🧱\nФунд. амбара",
-		18: "🪵\nКаркас амбара",
-		19: "🏚️\nКрыша амбара",
-		20: "🏗️\nСтены амбара",
-		21: "🚪\nВорота амбара",
-		22: "🏚️\nАмбар готов!",
-		23: "🔥\nТруба",
-		24: "🏡\nКрыльцо",
+		5:  "\nФундамент",
+		6:  "\nКаркас",
+		7:  "\nКрыша",
+		8:  "\nСтены",
+		9:  "\nОкно",
+		10: "\nДверь",
+		11: "\nКоса",
+		12: "\nЗабор",
+		13: "\nДорожка",
+		14: "\nГвоздь",
+		15: "\nДом готов!",
+		16: "\nКолодец",
+		17: "\nФунд. амбара",
+		18: "\nКаркас амбара",
+		19: "\nКрыша амбара",
+		20: "\nСтены амбара",
+		21: "\nВорота амбара",
+		22: "\nАмбар готов!",
+		23: "\nТруба",
+		24: "\nКрыльцо",
 	}
 	if labels.has(next_lvl):
 		btn.text = labels[next_lvl]
@@ -409,7 +409,7 @@ func _show_reward_popup(emoji: String, title: String, desc: String, inv_key: Str
 	overlay.add_child(desc_lbl)
 
 	var btn = Button.new()
-	btn.text = "✅ Собрать"
+	btn.text = " Собрать"
 	btn.position = Vector2(180, 800)
 	btn.size = Vector2(360, 70)
 	var bsbox = StyleBoxFlat.new()
@@ -501,12 +501,12 @@ func _on_all_trees_chopped():
 		await get_tree().create_timer(0.7).timeout
 		if GameState.inventory.get("raccoon_met", 0) == 0:
 			_show_raccoon_dialog(
-				"Эй! Стоп!\nЯ тут живу уже целый год!\nЕсли оставишь меня — помогу строить! 🦝",
+				"Эй! Стоп!\nЯ тут живу уже целый год!\nЕсли оставишь меня — помогу строить! ",
 				func(): pass
 			)
 		_update_story_btn(5)
 	else:
-		_show_hint("🌲 Участок расчищен! Продолжай собирать инструменты")
+		_show_hint(" Участок расчищен! Продолжай собирать инструменты")
 
 # ─── House sprite ─────────────────────────────────────────────────────────────
 
@@ -632,7 +632,7 @@ func _show_raccoon_dialog(text: String, on_close: Callable):
 	get_node("UI").add_child(overlay)
 
 	var raccoon = Label.new()
-	raccoon.text = "🦝"
+	raccoon.text = ""
 	raccoon.add_theme_font_size_override("font_size", 80)
 	raccoon.position = Vector2(16, 1160)
 	raccoon.size = Vector2(100, 100)
@@ -729,13 +729,13 @@ func _apply_season():
 func _on_watch_ad():
 	var btn = get_node_or_null("UI/BtnWatchAd")
 	if not AdManager.can_show_rewarded():
-		if btn: btn.text = "📺 Завтра снова"
+		if btn: btn.text = " Завтра снова"
 		return
 	AdManager.show_rewarded_for_coins()
 	_refresh_ui()
 	if btn:
 		var left = AdManager.REWARDED_DAILY_LIMIT - AdManager._rewarded_uses_today
-		btn.text = "📺 +30💰 (%d)" % left if left > 0 else "📺 Завтра снова"
+		btn.text = " +30 (%d)" % left if left > 0 else " Завтра снова"
 
 func _apply_language():
 	var btn_custom = get_node_or_null("UI/BtnCustomisation")
@@ -796,7 +796,7 @@ func _on_next_pressed():
 func _refresh_ui():
 	var lbl_coins = get_node_or_null("UI/LabelCoins")
 	if lbl_coins:
-		var new_text = "💰 %d" % GameState.coins
+		var new_text = " %d" % GameState.coins
 		if lbl_coins.text != new_text:
 			lbl_coins.text = new_text
 			var tw = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
@@ -806,22 +806,22 @@ func _refresh_ui():
 	var lbl_res = get_node_or_null("UI/LabelRes")
 	if lbl_res:
 		var logs = GameState.inventory.get("log", 0) + GameState.inventory.get("beam", 0) + GameState.inventory.get("plank", 0)
-		lbl_res.text = "🪵 %d" % logs
+		lbl_res.text = " %d" % logs
 
 	var lbl_streak = get_node_or_null("UI/LabelStreak")
 	if lbl_streak:
 		if GameState.streak >= 2:
-			lbl_streak.text = "🔥 %d" % GameState.streak
+			lbl_streak.text = " %d" % GameState.streak
 		else:
 			lbl_streak.text = ""
 
 	var btn_daily = get_node_or_null("UI/BtnDaily")
 	if btn_daily:
 		if GameState.is_daily_done():
-			btn_daily.text = "✅\nЧелл."
+			btn_daily.text = "\nЧелл."
 			btn_daily.modulate = Color(0.7, 0.7, 0.7, 1)
 		else:
-			btn_daily.text = "📅\nЧелл."
+			btn_daily.text = "\nЧелл."
 			btn_daily.modulate = Color(1, 1, 1, 1)
 
 func _animate_entrance():
@@ -853,7 +853,7 @@ func _animate_entrance():
 
 func _on_daily_pressed():
 	if GameState.is_daily_done():
-		_show_hint("✅ Уже пройдено! Возвращайся завтра")
+		_show_hint(" Уже пройдено! Возвращайся завтра")
 		return
 	GameState.is_daily_run = true
 	GameState.current_level = GameState.get_daily_level()
@@ -906,7 +906,7 @@ func _show_login_reward_popup():
 	overlay.add_child(vbox)
 
 	var title = Label.new()
-	title.text = "🎁 Ежедневная награда" if not en else "🎁 Daily Reward"
+	title.text = " Ежедневная награда" if not en else " Daily Reward"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_font_size_override("font_size", 24)
 	title.add_theme_color_override("font_color", Color(0.05, 0.03, 0.02, 1))
@@ -917,7 +917,7 @@ func _show_login_reward_popup():
 	hbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	vbox.add_child(hbox)
 
-	var rewards_labels = ["20💰","30💰","50💰","🪓","70💰","100💰","150💰"]
+	var rewards_labels = ["20","30","50","","70","100","150"]
 	var day_labels = ["1","2","3","4","5","6","7"]
 	for d in range(7):
 		var bsbox = StyleBoxFlat.new()
@@ -958,7 +958,7 @@ func _show_login_reward_popup():
 	vbox.add_child(got_lbl)
 
 	var btn = Button.new()
-	btn.text = "🎉 Отлично!" if not en else "🎉 Great!"
+	btn.text = " Отлично!" if not en else " Great!"
 	btn.custom_minimum_size = Vector2(200, 60)
 	var bsbox2 = StyleBoxFlat.new()
 	bsbox2.bg_color = Color(0.30, 0.68, 0.35, 1)

@@ -63,9 +63,9 @@ func _setup_ui():
 
 func _update_ui():
 	var lbl_score = get_node_or_null("UI/LabelScore")
-	if lbl_score: lbl_score.text = "🏆 %d" % _score
+	if lbl_score: lbl_score.text = " %d" % _score
 	var lbl_lives = get_node_or_null("UI/LabelLives")
-	if lbl_lives: lbl_lives.text = "❤️ ".repeat(_lives)
+	if lbl_lives: lbl_lives.text = " ".repeat(_lives)
 
 func _spawn_all_slots():
 	for i in range(3):

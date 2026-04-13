@@ -56,7 +56,7 @@ func _make_card(a: Dictionary, done: bool, en: bool) -> Control:
 
 	# Emoji
 	var icon = Label.new()
-	icon.text = a["emoji"] if done else "🔒"
+	icon.text = a["emoji"] if done else ""
 	icon.add_theme_font_size_override("font_size", 36)
 	icon.custom_minimum_size = Vector2(48, 0)
 	icon.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -83,7 +83,7 @@ func _make_card(a: Dictionary, done: bool, en: bool) -> Control:
 
 	# Coins reward
 	var coins_lbl = Label.new()
-	coins_lbl.text = "+%d💰" % a["coins"] if not done else "✓"
+	coins_lbl.text = "+%d" % a["coins"] if not done else ""
 	coins_lbl.add_theme_font_size_override("font_size", 18)
 	coins_lbl.add_theme_color_override("font_color",
 		Color(0.18, 0.52, 0.22, 1) if done else Color(0.68, 0.48, 0.05, 1))

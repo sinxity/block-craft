@@ -52,7 +52,7 @@ func _build_grid():
 		lbl_stars.add_theme_font_size_override("font_size", 15)
 
 		if locked:
-			lbl_num.text = "🔒"
+			lbl_num.text = ""
 			lbl_num.add_theme_font_size_override("font_size", 22)
 			lbl_stars.text = str(i)
 			lbl_stars.add_theme_color_override("font_color", Color(0.55, 0.53, 0.50, 1.0))
@@ -61,7 +61,7 @@ func _build_grid():
 			lbl_num.add_theme_color_override("font_color", Color(0.22, 0.20, 0.17, 1.0))
 			var star_str = ""
 			for s in range(3):
-				star_str += "★" if s < stars else "☆"
+				star_str += "" if s < stars else ""
 			lbl_stars.text = star_str
 			if stars > 0:
 				lbl_stars.add_theme_color_override("font_color", Color(0.75, 0.55, 0.10, 1.0))

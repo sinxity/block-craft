@@ -29,12 +29,8 @@ SceneTransition="*res://scripts/SceneTransition.gd"
 window/size/viewport_width=720
 window/size/viewport_height=1560
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
 window/handheld/orientation="portrait"
-
-[gui]
-
-theme/custom_font="uid://b4b3ycqs0or8e"
 
 [physics]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 const PIECE_STYLES = [
 	{
-		"id": "classic", "name": "Классик", "name_en": "Classic", "emoji": "🧱",
+		"id": "classic", "name": "Классик", "name_en": "Classic", "emoji": "",
 		"desc": "3D-эффект с подсветкой", "desc_en": "3D highlight effect",
 		"preview": [Color(0.2,0.8,0.9), Color(0.9,0.5,0.1), Color(0.7,0.2,0.9)],
 	},
@@ -12,7 +12,7 @@ const PIECE_STYLES = [
 		"preview": [Color(0.2,0.8,0.9), Color(0.9,0.5,0.1), Color(0.7,0.2,0.9)],
 	},
 	{
-		"id": "pixel", "name": "Пиксель", "name_en": "Pixel", "emoji": "👾",
+		"id": "pixel", "name": "Пиксель", "name_en": "Pixel", "emoji": "",
 		"desc": "Ретро с толстой рамкой", "desc_en": "Retro thick border",
 		"preview": [Color(0.2,0.8,0.9), Color(0.9,0.5,0.1), Color(0.7,0.2,0.9)],
 	},
@@ -199,7 +199,7 @@ func _make_bg_card(data: Dictionary) -> Control:
 
 	vbox.add_child(_make_label(data["name_en"] if en else data["name"], 18))
 	if active:
-		vbox.add_child(_make_label("✓", 20, Color(0.20,0.48,0.22,1)))
+		vbox.add_child(_make_label("", 20, Color(0.20,0.48,0.22,1)))
 	else:
 		var btn = Button.new()
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL

@@ -1,19 +1,19 @@
 extends Node2D
 
 const SKINS = [
-	{"id": "classic",  "name": "Классика", "name_en": "Classic", "emoji": "🎨", "price": 0,   "desc": "Оригинальные цвета", "desc_en": "Original colors"},
-	{"id": "forest",      "name": "Лес",      "name_en": "Forest",  "emoji": "🌲", "price": 150,  "desc": "Зелёные тона",       "desc_en": "Green tones"},
-	{"id": "sunset",    "name": "Закат",    "name_en": "Sunset",  "emoji": "🌅", "price": 200,  "desc": "Тёплые тона",        "desc_en": "Warm tones"},
-	{"id": "ocean",    "name": "Океан",    "name_en": "Ocean",   "emoji": "🌊", "price": 200,  "desc": "Синие тона",         "desc_en": "Blue tones"},
-	{"id": "night",     "name": "Ночь",     "name_en": "Night",   "emoji": "🌙", "price": 250,  "desc": "Тёмные тона",        "desc_en": "Dark tones"},
-	{"id": "pastel",  "name": "Пастель",  "name_en": "Pastel",  "emoji": "🌸", "price": 300,  "desc": "Мягкие тона",        "desc_en": "Soft tones"},
-	{"id": "gold",   "name": "Золото",   "name_en": "Gold",    "emoji": "✨", "price": 350,  "desc": "Золотые тона",       "desc_en": "Golden tones"},
-	{"id": "stone",   "name": "Камень",   "name_en": "Stone",   "emoji": "🪨", "price": 200,  "desc": "Серые тона",         "desc_en": "Grey tones"},
+	{"id": "classic",  "name": "Классика", "name_en": "Classic", "emoji": "", "price": 0,   "desc": "Оригинальные цвета", "desc_en": "Original colors"},
+	{"id": "forest",      "name": "Лес",      "name_en": "Forest",  "emoji": "", "price": 150,  "desc": "Зелёные тона",       "desc_en": "Green tones"},
+	{"id": "sunset",    "name": "Закат",    "name_en": "Sunset",  "emoji": "", "price": 200,  "desc": "Тёплые тона",        "desc_en": "Warm tones"},
+	{"id": "ocean",    "name": "Океан",    "name_en": "Ocean",   "emoji": "", "price": 200,  "desc": "Синие тона",         "desc_en": "Blue tones"},
+	{"id": "night",     "name": "Ночь",     "name_en": "Night",   "emoji": "", "price": 250,  "desc": "Тёмные тона",        "desc_en": "Dark tones"},
+	{"id": "pastel",  "name": "Пастель",  "name_en": "Pastel",  "emoji": "", "price": 300,  "desc": "Мягкие тона",        "desc_en": "Soft tones"},
+	{"id": "gold",   "name": "Золото",   "name_en": "Gold",    "emoji": "", "price": 350,  "desc": "Золотые тона",       "desc_en": "Golden tones"},
+	{"id": "stone",   "name": "Камень",   "name_en": "Stone",   "emoji": "", "price": 200,  "desc": "Серые тона",         "desc_en": "Grey tones"},
 ]
 
 const SKILL_ITEMS = [
-	{"key": "axe_skill",  "emoji": "🪓", "name": "Топор",   "name_en": "Axe",  "desc": "+3 заряда", "desc_en": "+3 charges", "price": 80},
-	{"key": "bomb_skill", "emoji": "💣", "name": "Бомба",   "name_en": "Bomb", "desc": "+3 заряда", "desc_en": "+3 charges", "price": 100},
+	{"key": "axe_skill",  "emoji": "", "name": "Топор",   "name_en": "Axe",  "desc": "+3 заряда", "desc_en": "+3 charges", "price": 80},
+	{"key": "bomb_skill", "emoji": "", "name": "Бомба",   "name_en": "Bomb", "desc": "+3 заряда", "desc_en": "+3 charges", "price": 100},
 	{"key": "skip_skill", "emoji": "⏭",  "name": "Пропуск", "name_en": "Skip", "desc": "+3 заряда", "desc_en": "+3 charges", "price": 60},
 ]
 
@@ -54,7 +54,7 @@ func _apply_language():
 
 func _refresh_coins():
 	if _label_coins:
-		_label_coins.text = "💰 %d" % GameState.coins
+		_label_coins.text = " %d" % GameState.coins
 
 # ── helpers ─────────────────────────────────────────────────────
 
@@ -165,7 +165,7 @@ func _make_skin_card(skin: Dictionary) -> Control:
 		btn.pressed.connect(func(): _buy_skin(skin["id"], 0))
 	else:
 		var can = GameState.coins >= skin["price"]
-		btn.text = "💰 %d  Купить" % skin["price"]
+		btn.text = " %d  Купить" % skin["price"]
 		btn.add_theme_stylebox_override("normal",  _make_style(Color(0.95,0.88,0.62,1) if can else Color(0.88,0.86,0.83,1), 12))
 		btn.add_theme_stylebox_override("hover",   _make_style(Color(0.88,0.80,0.52,1) if can else Color(0.88,0.86,0.83,1), 12))
 		btn.add_theme_stylebox_override("pressed", _make_style(Color(0.80,0.72,0.45,1) if can else Color(0.88,0.86,0.83,1), 12))
@@ -261,7 +261,7 @@ func _make_skill_card(item: Dictionary) -> Control:
 	btn.add_theme_font_size_override("font_size", 17)
 
 	if not unlocked:
-		btn.text = "🔒"
+		btn.text = ""
 		btn.disabled = true
 		btn.add_theme_stylebox_override("normal",   _make_style(Color(0.88,0.86,0.83,1), 12))
 		btn.add_theme_stylebox_override("disabled", _make_style(Color(0.88,0.86,0.83,1), 12))
@@ -274,7 +274,7 @@ func _make_skill_card(item: Dictionary) -> Control:
 		btn.add_theme_color_override("font_color", Color(0.15,0.42,0.18,1))
 	else:
 		var can = GameState.coins >= item["price"]
-		btn.text = "💰 %d" % item["price"]
+		btn.text = " %d" % item["price"]
 		btn.add_theme_stylebox_override("normal",  _make_style(Color(0.95,0.88,0.62,1) if can else Color(0.88,0.86,0.83,1), 12))
 		btn.add_theme_stylebox_override("hover",   _make_style(Color(0.88,0.80,0.52,1) if can else Color(0.88,0.86,0.83,1), 12))
 		btn.add_theme_stylebox_override("pressed", _make_style(Color(0.80,0.72,0.45,1) if can else Color(0.88,0.86,0.83,1), 12))
