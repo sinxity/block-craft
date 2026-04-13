@@ -1,0 +1,490 @@
+[gd_scene format=3 uid="uid://wg3t3scrhi6r"]
+
+[ext_resource type="Script" uid="uid://bgjvg5ikikxvq" path="res://scripts/Hub.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cg4vvi457gtdn" path="res://assets/sprites/house/house_stage1.png" id="17_3t717"]
+[ext_resource type="Texture2D" uid="uid://b7ld7e82p6efo" path="res://assets/sprites/barn/barn_stage1.png" id="18_q1um2"]
+[ext_resource type="Texture2D" uid="uid://droyjr8pb1vrx" path="res://assets/sprites/props/fence_rail.png" id="19_ftpco"]
+[ext_resource type="Texture2D" uid="uid://nrg071p6jy66" path="res://assets/sprites/props/path.png" id="20_osip4"]
+[ext_resource type="Texture2D" uid="uid://c4p77ejdhmcjd" path="res://assets/sprites/props/well.png" id="21_kodur"]
+[ext_resource type="Script" uid="uid://da2ksxianpvqo" path="res://scripts/BounceButton.gd" id="bounce_btn"]
+[ext_resource type="Texture2D" uid="uid://17kktnm137qk" path="res://assets/sprites/nature/bush_02.png" id="bush_02"]
+[ext_resource type="Texture2D" uid="uid://cnmlos6m88g2e" path="res://assets/sprites/nature/bush_03.png" id="bush_03"]
+[ext_resource type="Texture2D" uid="uid://di3tgyicakv46" path="res://assets/sprites/nature/bush_04.png" id="bush_04"]
+[ext_resource type="Texture2D" uid="uid://en6jgsootd52" path="res://assets/sprites/nature/bush_05.png" id="bush_05"]
+[ext_resource type="Texture2D" uid="uid://c00cdexaeyjl2" path="res://assets/sprites/nature/bush_06.png" id="bush_06"]
+[ext_resource type="Texture2D" uid="uid://c0ylofih7aqml" path="res://assets/sprites/nature/bush_07.png" id="bush_07"]
+[ext_resource type="Texture2D" uid="uid://dqk5pd76db3th" path="res://assets/sprites/nature/bush_08.png" id="bush_08"]
+[ext_resource type="Texture2D" uid="uid://cv3kbs4l8c3vb" path="res://assets/sprites/hub_bg.png" id="hub_bg"]
+[ext_resource type="Shader" uid="uid://cnln6vb471aai" path="res://assets/shaders/remove_white.gdshader" id="remove_white_shader"]
+[ext_resource type="Texture2D" uid="uid://c4ge6itl5bjwr" path="res://assets/sprites/nature/tree_oak_1.png" id="tree_oak_1"]
+[ext_resource type="Texture2D" uid="uid://slpjbkh7eevm" path="res://assets/sprites/nature/tree_oak_2.png" id="tree_oak_2"]
+[ext_resource type="Texture2D" uid="uid://dngngcywui48h" path="res://assets/sprites/nature/tree_oak_3.png" id="tree_oak_3"]
+[ext_resource type="Texture2D" uid="uid://dira20uru2rsi" path="res://assets/sprites/nature/tree_oak_4.png" id="tree_oak_4"]
+[ext_resource type="Texture2D" uid="uid://ic7ktd7npkbt" path="res://assets/sprites/nature/tree_pine_1.png" id="tree_pine_1"]
+[ext_resource type="Texture2D" uid="uid://crsclt8wn4uox" path="res://assets/sprites/nature/tree_pine_2.png" id="tree_pine_2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trees"]
+shader = ExtResource("remove_white_shader")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1xakq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6"]
+bg_color = Color(0.12, 0.1, 0.07, 0.78)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7"]
+bg_color = Color(0.18, 0.38, 0.18, 0.82)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_9"]
+bg_color = Color(0.1, 0.25, 0.1, 0.9)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8"]
+bg_color = Color(0.22, 0.42, 0.22, 0.85)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.1, 0.08, 0.05, 0.82)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+bg_color = Color(0.18, 0.38, 0.18, 0.82)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5"]
+bg_color = Color(0.1, 0.25, 0.1, 0.9)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4"]
+bg_color = Color(0.22, 0.42, 0.22, 0.85)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="Hub" type="Node2D" unique_id=2124324433]
+script = ExtResource("1")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=330731739]
+position = Vector2(360, 780)
+scale = Vector2(1.09, 1.09)
+texture = ExtResource("hub_bg")
+
+[node name="Trees" type="Node2D" parent="." unique_id=208576613]
+
+[node name="T1" type="Sprite2D" parent="Trees" unique_id=143461668]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(30, 310)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("tree_oak_2")
+centered = false
+
+[node name="T2" type="Sprite2D" parent="Trees" unique_id=818191868]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(240, 260)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("tree_oak_1")
+centered = false
+
+[node name="T3" type="Sprite2D" parent="Trees" unique_id=869016324]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(430, 290)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("tree_oak_3")
+centered = false
+
+[node name="T4" type="Sprite2D" parent="Trees" unique_id=1325078832]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(500, 420)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("tree_pine_1")
+centered = false
+
+[node name="T5" type="Sprite2D" parent="Trees" unique_id=544995658]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(120, 480)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("tree_pine_2")
+centered = false
+
+[node name="T6" type="Sprite2D" parent="Trees" unique_id=695808148]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(320, 500)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("tree_oak_4")
+centered = false
+
+[node name="T7" type="Sprite2D" parent="Trees" unique_id=1387337916]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(560, 600)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("tree_pine_1")
+centered = false
+
+[node name="T8" type="Sprite2D" parent="Trees" unique_id=1639427976]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(30, 680)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("tree_oak_1")
+centered = false
+
+[node name="T9" type="Sprite2D" parent="Trees" unique_id=925838088]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(390, 720)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("tree_oak_2")
+centered = false
+
+[node name="T10" type="Sprite2D" parent="Trees" unique_id=1294345220]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(200, 780)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("tree_oak_3")
+centered = false
+
+[node name="T11" type="Sprite2D" parent="Trees" unique_id=150257081]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(520, 820)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("tree_oak_4")
+centered = false
+
+[node name="B1" type="Sprite2D" parent="Trees" unique_id=471621886]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(80, 400)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CanvasTexture_1xakq")
+centered = false
+
+[node name="B2" type="Sprite2D" parent="Trees" unique_id=289616277]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(370, 380)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("bush_02")
+centered = false
+
+[node name="B3" type="Sprite2D" parent="Trees" unique_id=764357627]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(560, 470)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("bush_03")
+centered = false
+
+[node name="B4" type="Sprite2D" parent="Trees" unique_id=1717696245]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(180, 580)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("bush_04")
+centered = false
+
+[node name="B5" type="Sprite2D" parent="Trees" unique_id=371387991]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(450, 570)
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("bush_05")
+centered = false
+
+[node name="B6" type="Sprite2D" parent="Trees" unique_id=2098176066]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(60, 820)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("bush_06")
+centered = false
+
+[node name="B7" type="Sprite2D" parent="Trees" unique_id=745967437]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(310, 870)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("bush_07")
+centered = false
+
+[node name="B8" type="Sprite2D" parent="Trees" unique_id=975074524]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(540, 900)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("bush_08")
+centered = false
+
+[node name="B9" type="Sprite2D" parent="Trees" unique_id=1243696173]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(140, 950)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("bush_02")
+centered = false
+
+[node name="B10" type="Sprite2D" parent="Trees" unique_id=404109658]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(400, 960)
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("bush_05")
+centered = false
+
+[node name="B11" type="Sprite2D" parent="Trees" unique_id=523504372]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(250, 420)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("bush_03")
+centered = false
+
+[node name="B12" type="Sprite2D" parent="Trees" unique_id=1955571322]
+material = SubResource("ShaderMaterial_trees")
+position = Vector2(480, 340)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("bush_06")
+centered = false
+
+[node name="House" type="Sprite2D" parent="." unique_id=783492155]
+position = Vector2(648, 720)
+scale = Vector2(1.0444785, 0.83977556)
+texture = ExtResource("17_3t717")
+
+[node name="Barn" type="Sprite2D" parent="." unique_id=312847651]
+position = Vector2(312, 384)
+scale = Vector2(0.7313064, 0.6998693)
+texture = ExtResource("18_q1um2")
+
+[node name="Fence" type="Sprite2D" parent="." unique_id=198453072]
+position = Vector2(648, 936)
+scale = Vector2(0.48359028, 0.3656515)
+texture = ExtResource("19_ftpco")
+
+[node name="Path" type="Sprite2D" parent="." unique_id=487261933]
+position = Vector2(440, 864)
+scale = Vector2(0.2945572, 0.28451586)
+texture = ExtResource("20_osip4")
+
+[node name="Well" type="Sprite2D" parent="." unique_id=621739845]
+position = Vector2(144, 736)
+scale = Vector2(0.2836393, 0.29161277)
+texture = ExtResource("21_kodur")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=549953614]
+
+[node name="TopBar" type="ColorRect" parent="UI" unique_id=1923075646]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+color = Color(0.15, 0.12, 0.08, 0.72)
+
+[node name="TopAccent" type="ColorRect" parent="UI" unique_id=1561867102]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 82.0
+offset_bottom = 84.0
+color = Color(0, 0, 0, 0.3)
+
+[node name="ResourcesPanel" type="Panel" parent="UI" unique_id=1435095188]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 330.0
+offset_bottom = 76.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6")
+
+[node name="LabelCoins" type="Label" parent="UI" unique_id=381705379]
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 325.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 20
+text = "💰 0"
+
+[node name="LabelRes" type="Label" parent="UI" unique_id=1613032248]
+offset_left = 18.0
+offset_top = 42.0
+offset_right = 325.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 17
+text = "🪵 0"
+
+[node name="BtnSettings" type="Button" parent="UI" unique_id=2080531533]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 12.0
+offset_right = -8.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_9")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8")
+text = "⚙️"
+script = ExtResource("bounce_btn")
+
+[node name="BottomPanel" type="Panel" parent="UI" unique_id=2118740124]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -184.0
+offset_right = -10.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+
+[node name="BtnCustomisation" type="Button" parent="UI" unique_id=1371742243]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -176.0
+offset_right = 232.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4")
+text = "🎨
+Кастом"
+script = ExtResource("bounce_btn")
+
+[node name="BtnShop" type="Button" parent="UI" unique_id=1065494750]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = -176.0
+offset_right = 448.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4")
+text = "🏪
+Магазин"
+script = ExtResource("bounce_btn")
+
+[node name="BtnNextLevel" type="Button" parent="UI" unique_id=1382696195]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_top = -176.0
+offset_right = 688.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4")
+text = "▶️
+Играть"
+script = ExtResource("bounce_btn")
+
+[node name="Hint" type="Label" parent="UI" unique_id=224982529]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -252.0
+offset_right = 660.0
+offset_bottom = -194.0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="LabelDone" type="Label" parent="UI" unique_id=1539160925]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -370.0
+offset_bottom = -310.0
+theme_override_colors/font_color = Color(0.3, 0.58, 0.35, 1)
+theme_override_font_sizes/font_size = 26
+text = "🏠 Ферма построена!"
+horizontal_alignment = 1
+
+[node name="LabelStreak" type="Label" parent="UI" unique_id=425364138]
+offset_left = 338.0
+offset_top = 8.0
+offset_right = 645.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnDaily" type="Button" parent="UI" unique_id=319427483]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -312.0
+offset_right = 128.0
+offset_bottom = -200.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4")
+text = "📅
+Челл."
+script = ExtResource("bounce_btn")
+
+[node name="BtnAchievements" type="Button" parent="UI" unique_id=1657894557]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -440.0
+offset_right = 128.0
+offset_bottom = -328.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.93, 0.88, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4")
+text = "🏆
+Достиж."
+script = ExtResource("bounce_btn")
+
+[node name="BtnWatchAd" type="Button" parent="UI" unique_id=621452113]
+offset_left = 496.0
+offset_top = 8.0
+offset_right = 624.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.35, 0.25, 0.02, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5")
+text = "📺 +30💰"
+script = ExtResource("bounce_btn")

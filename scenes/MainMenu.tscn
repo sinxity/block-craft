@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://mainmenu"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 1560.0
+color = Color(0.07, 0.13, 0.06, 1)
+
+[node name="TopGlow" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 500.0
+color = Color(0.12, 0.28, 0.10, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LogoBG" type="ColorRect" parent="UI"]
+offset_left = 235.0
+offset_top = 280.0
+offset_right = 485.0
+offset_bottom = 530.0
+color = Color(0.18, 0.18, 0.18, 1)
+
+[node name="LogoCircle" type="ColorRect" parent="UI"]
+offset_left = 255.0
+offset_top = 300.0
+offset_right = 465.0
+offset_bottom = 510.0
+color = Color(0.26, 0.26, 0.26, 1)
+
+[node name="LogoHint" type="Label" parent="UI"]
+offset_left = 200.0
+offset_top = 510.0
+offset_right = 520.0
+offset_bottom = 550.0
+horizontal_alignment = 1
+text = "logo"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="LabelTitle" type="Label" parent="UI"]
+offset_left = 0.0
+offset_top = 580.0
+offset_right = 720.0
+offset_bottom = 680.0
+horizontal_alignment = 1
+text = "BLOCK CRAFT"
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0.95, 0.88, 0.55, 1)
+
+[node name="LabelSub" type="Label" parent="UI"]
+offset_left = 0.0
+offset_top = 678.0
+offset_right = 720.0
+offset_bottom = 730.0
+horizontal_alignment = 1
+text = "Построй свой мир"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.6, 0.8, 0.5, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+offset_left = 80.0
+offset_top = 1200.0
+offset_right = 640.0
+offset_bottom = 1240.0
+value = 0.0
+
+[node name="LabelLoading" type="Label" parent="UI"]
+offset_left = 0.0
+offset_top = 1245.0
+offset_right = 720.0
+offset_bottom = 1285.0
+horizontal_alignment = 1
+text = "Загрузка..."
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
